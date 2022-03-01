@@ -1,6 +1,17 @@
+import { useParams } from "react-router-dom";
+
+import Breadcrumb from "../components/breadcrumb";
+import Search from "./search";
+
 const ProductDetail = () => {
+  const { id } = useParams();
+  
   return (
-    <div>product-detail</div>
+    <>
+      <Search />
+      <Breadcrumb categoryTree={['1', '2']} />
+      <p>detail</p>
+    </>
   )
 }
 

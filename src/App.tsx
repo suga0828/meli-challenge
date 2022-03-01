@@ -1,7 +1,7 @@
  
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Search from "./components/search";
+import Search from "./pages/search";
 import ProductDetail from "./pages/product-detail";
 import ProductsList from "./pages/products-result";
 
@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter basename={baseName}>
       <Routes>
         <Route path="/" element={<Search />} />
-        <Route path="/items?search=:query" element={<ProductsList />} />
-        <Route path="/items/:id" element={<ProductDetail />} />
+        <Route path="items/" element={<ProductsList />} />
+        <Route path="items/:id" element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   );
