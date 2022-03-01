@@ -1,10 +1,21 @@
-import React from 'react';
+ 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Search from "./components/search";
+import ProductDetail from "./pages/product-detail";
+import ProductsList from "./pages/products-result";
+
+const baseName = true ? '' : 'meli-challenge';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <BrowserRouter basename={baseName}>
+      <Routes>
+        <Route path="/" element={<Search />} />
+        <Route path="/items?search=:query" element={<ProductsList />} />
+        <Route path="/items/:id" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
