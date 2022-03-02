@@ -1,25 +1,33 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import logo from '../assets/logo.png';
 import searchIcon from '../assets/search-icon.png';
 
 const Search = () => {
+  const navigate = useNavigate();
+  
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log((e.target as any).query.value);
+    const q: string = (e.target as any).query.value;
+
+    navigate({
+      pathname: '/items',
+      search: `?q=${q}`,
+    })
   };
 
   return (
-    <div className="bg-primary">
-      <div className="max-w-7xl mx-auto py-4 flex justify-center">
+    <div className="bg-primary h-12 flex items-center md:h-24">
+      <div className="w-11/12 max-w-screen-2xl mx-auto flex items-center">
         <Link to="/" className="flex items-center justify-center mr-4">
-          <img src={logo} alt="Mercado Libre Brand" className="h-12 w-auto" />
+          <img src={logo} alt="Mercado Libre Brand" className="h-6 md:h-12 w-auto" />
         </Link> 
 
-        <form className="w-4/5 flex rounded" onSubmit={onSubmit}>
-          <input type="text" name="query" placeholder="Nunca dejes de buscar" className="grow rounded-l text-lg p-4" />
+        <form className="w-4/5 flex rounded grow" onSubmit={onSubmit}>
+          <input type="text" name="query" placeholder="Nunca dejes de buscar" className="grow rounded-l text-sm md:text-lg p-2" />
           <button className="bg-gray-e px-4 rounded-r flex items-center">
-            <img className="h-6 w-6" src={searchIcon} alt="Click to search" />
+            <img className="h-4 w-4 md:h-5 md:w-5" src={searchIcon} alt="Click to search" />
           </button>
         </form>
       </div>
@@ -28,3 +36,7 @@ const Search = () => {
 }
 
 export default Search
+
+function useHistory() {
+  throw new Error('Function not implemented.');
+}

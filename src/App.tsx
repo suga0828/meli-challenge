@@ -9,13 +9,15 @@ const baseName = true ? '' : 'meli-challenge';
 
 function App() {
   return (
-    <BrowserRouter basename={baseName}>
-      <Routes>
-        <Route path="/" element={<Search />} />
-        <Route path="items/" element={<ProductsList />} />
-        <Route path="items/:id" element={<ProductDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-gray-e min-h-screen pb-4">
+      <BrowserRouter basename={baseName}>
+        <Routes>
+          <Route path="/" element={<Search />} />
+          <Route path="items/" element={<ProductsList />} />
+          <Route path="items/:id" element={<ProductDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
