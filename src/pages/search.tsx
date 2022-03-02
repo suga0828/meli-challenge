@@ -36,7 +36,3 @@ const Search = () => {
 }
 
 export default Search
-
-function useHistory() {
-  throw new Error('Function not implemented.');
-}

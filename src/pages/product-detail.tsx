@@ -10,7 +10,7 @@ const ProductDetail = () => {
     <>
       <Search />
       <Breadcrumb categoryTree={['1', '2']} />
-      <p>detail</p>
+      <p>id: {id}</p>
     </>
   )
 }
