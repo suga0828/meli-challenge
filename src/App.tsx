@@ -5,7 +5,7 @@ import Search from "./pages/search";
 import ProductDetail from "./pages/product-detail";
 import ProductsList from "./pages/products-result";
 
-const baseName = 'meli-challenge/';
+const baseName = process.env.PROD ? 'meli-challenge/' : '';
 
 function App() {
   return (
