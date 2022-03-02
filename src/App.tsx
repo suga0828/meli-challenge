@@ -5,7 +5,7 @@ import Search from "./pages/search";
 import ProductDetail from "./pages/product-detail";
 import ProductsList from "./pages/products-result";
 
-const baseName = true ? '' : 'meli-challenge';
+const baseName = 'meli-challenge/';
 
 function App() {
   return (
