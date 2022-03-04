@@ -9,7 +9,6 @@ import { Item } from "../definitions/product.types";
 import { getItems } from "../services/product.service";
 
 import Breadcrumb from "../components/breadcrumb";
-import Search from "./Search/Search";
 import Loading from "../components/loading";
 
 const ProductsList = () => {
