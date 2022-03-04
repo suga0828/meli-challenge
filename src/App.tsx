@@ -1,9 +1,8 @@
- 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Search from "./pages/Search/Search";
-import ProductDetail from "./pages/ProductDetail";
-import ProductsList from "./pages/ProductsResult";
+import Search from './pages/Search/Search';
+import ProductDetail from './pages/ProductDetail';
+import ProductsList from './pages/ProductsResult';
 
 function App() {
   return (

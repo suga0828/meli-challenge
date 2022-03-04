@@ -1,9 +1,9 @@
-import { Author } from "./author.types";
+import { Author } from './author.types';
 
 interface Price {
-  currency: string,
-  amount: number,
-  decimals: number,
+  currency: string;
+  amount: number;
+  decimals: number;
 }
 
 export interface Item {
@@ -15,7 +15,7 @@ export interface Item {
   free_shipping: boolean;
   sold_quantity: number;
   description: string;
-  address: string
+  address: string;
 }
 
 export interface ItemResponse {

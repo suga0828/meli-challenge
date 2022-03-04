@@ -1,11 +1,11 @@
-import { Author } from "../definitions/author.types";
+import { Author } from '../definitions/author.types';
 
 import { getAuthor } from './author.util';
 
 describe('getAuthor', () => {
   beforeEach(() => {
     sessionStorage.clear();
-  })
+  });
 
   test('should get author from session storage', () => {
     sessionStorage.setItem('name', 'John');
