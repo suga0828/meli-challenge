@@ -5,14 +5,13 @@ import Search from "./pages/Search/Search";
 import ProductDetail from "./pages/ProductDetail";
 import ProductsList from "./pages/ProductsResult";
 
-const baseName = process.env.PROD ? 'meli-challenge/' : '';
-
 function App() {
   return (
     <div className="bg-gray-e min-h-screen pb-4">
-      <BrowserRouter basename={baseName}>
+      <BrowserRouter>
         <Search />
         <Routes>
+          <Route path="/" element={null} />
           <Route path="items/" element={<ProductsList />} />
           <Route path="items/:id" element={<ProductDetail />} />
         </Routes>

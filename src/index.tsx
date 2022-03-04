@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Used for API calls
+sessionStorage.setItem('name', 'Alexander');
+sessionStorage.setItem('lastname', 'Sandoval');
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
