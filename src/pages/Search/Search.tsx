@@ -24,7 +24,7 @@ const Search = () => {
   };
 
   useEffect(() => {
-    setQuery(searchParams.get('q') || '');
+    setQuery(searchParams.get('search') || '');
   }, [searchParams]);
 
   return (
