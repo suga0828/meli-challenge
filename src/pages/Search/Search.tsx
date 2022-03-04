@@ -1,21 +1,31 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
-import logo from '../assets/logo.png';
-import searchIcon from '../assets/search-icon.png';
+import logo from '../../assets/logo.png';
+import searchIcon from '../../assets/search-icon.png';
 
 const Search = () => {
+  const [searchParams] = useSearchParams();
+  const [query, setQuery] = useState('');
+  
   const navigate = useNavigate();
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
   
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const q: string = (e.target as any).query.value;
-
     navigate({
       pathname: '/items',
-      search: `?q=${q}`,
+      search: `?q=${query}`,
     })
   };
+
+  useEffect(() => {
+    setQuery(searchParams.get("q") || '');
+  }, [searchParams])
 
   return (
     <div className="bg-primary h-12 flex items-center md:h-24">
@@ -25,7 +35,7 @@ const Search = () => {
         </Link> 
 
         <form className="w-4/5 flex rounded grow" onSubmit={onSubmit}>
-          <input type="text" name="query" placeholder="Nunca dejes de buscar" className="grow rounded-l text-sm md:text-lg p-2" />
+          <input onChange={onChange} value={query} type="text" name="query" placeholder="Nunca dejes de buscar" className="grow rounded-l text-sm md:text-lg p-2" />
           <button className="bg-gray-e px-4 rounded-r flex items-center">
             <img className="h-4 w-4 md:h-5 md:w-5" src={searchIcon} alt="Click to search" />
           </button>

@@ -5,7 +5,7 @@ import Breadcrumb from "../components/breadcrumb";
 import Loading from "../components/loading";
 import { Item, ItemResponse } from "../definitions/product.types";
 import { getItem } from "../services/product.service";
-import Search from "./search";
+import Search from "./Search/Search";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -23,7 +23,6 @@ const ProductDetail = () => {
   
   return (
     <>
-      <Search />
       {loading
         ? <Loading />
         : (
