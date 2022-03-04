@@ -19,7 +19,7 @@ const Search = () => {
 
     navigate({
       pathname: '/items',
-      search: `?q=${query}`,
+      search: `?search=${query}`,
     });
   };
 

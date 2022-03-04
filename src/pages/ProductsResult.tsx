@@ -13,7 +13,7 @@ import Loading from '../components/loading';
 
 const ProductsList = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('q') as string;
+  const query = searchParams.get('search') as string;
 
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState<Item[]>([]);
